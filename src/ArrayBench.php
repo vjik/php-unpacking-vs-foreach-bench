@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Vjik\UnpackingVsForeachBench;
 
 /**
- * @Iterations(1)
- * @Revs(100)
+ * @Iterations(10)
+ * @Revs(1000)
  */
 abstract class ArrayBench
 {
