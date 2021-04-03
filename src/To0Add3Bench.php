@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Vjik\UnpackingVsForeachBench;
 
-final class A3To50Bench extends ArrayBench
+final class To0Add3Bench extends ArrayBench
 {
     protected function getCountElementsFrom(): int
     {
-        return 3;
+        return 0;
     }
 
     protected function getCountElementsTo(): int
     {
-        return 50;
+        return 3;
     }
 }
