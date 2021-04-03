@@ -1,0 +1,24 @@
+{
+    "name": "vjik/php-unpacking-vs-foreach-bench",
+    "type": "library",
+    "description": "",
+    "keywords": [],
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/vjik/php-unpacking-vs-foreach-bench/issues?state=open",
+        "source": "https://github.com/vjik/php-unpacking-vs-foreach-bench"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4|^8.0",
+        "phpbench/phpbench": "^0.17.1|^1.0.0-alpha"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vjik\\UnpackingVsForeachBench\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

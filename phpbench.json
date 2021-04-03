@@ -1,0 +1,13 @@
+{
+    "php_disable_ini": true,
+    "bootstrap": "vendor/autoload.php",
+    "path": "src",
+    "reports": {
+        "my": {
+            "extends": "aggregate",
+            "break": [
+                "benchmark"
+            ]
+        }
+    }
+}
