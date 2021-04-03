@@ -10,14 +10,13 @@ namespace Vjik\UnpackingVsForeachBench;
  */
 abstract class ArrayBench
 {
-    private array $data = [];
+    private array $array = [];
+    private array $add = [];
 
     public function setData(): void
     {
-        $this->data = [
-            $this->generateArray($this->getCountElementsFrom()),
-            $this->generateArray($this->getCountElementsTo()),
-        ];
+        $this->array = $this->generateArray($this->getCountElementsFrom());
+        $this->add = $this->generateArray($this->getCountElementsTo());
     }
 
     abstract protected function getCountElementsFrom(): int;
@@ -26,11 +25,11 @@ abstract class ArrayBench
 
     private function generateArray(int $count): array
     {
-        $data = [];
+        $array = [];
         for ($i = 1; $i <= $count; $i++) {
-            $data[] = (string)$i;
+            $array[] = (string)$i;
         }
-        return $data;
+        return $array;
     }
 
     /**
@@ -38,7 +37,8 @@ abstract class ArrayBench
      */
     public function benchUnpacking(): void
     {
-        $columns = [...$this->data[0], ...$this->data[1]];
+        $array = $this->array;
+        $array = [...$array, ...$this->add];
     }
 
     /**
@@ -46,9 +46,9 @@ abstract class ArrayBench
      */
     public function benchForeach(): void
     {
-        $columns = $this->data[0];
-        foreach ($this->data[1] as $column) {
-            $columns[] = $column;
+        $array = $this->array;
+        foreach ($this->add as $item) {
+            $array[] = $item;
         }
     }
 }
