@@ -51,4 +51,13 @@ abstract class ArrayBench
             $array[] = $item;
         }
     }
+
+    /**
+     * @BeforeMethods("setData")
+     */
+    public function benchMerge(): void
+    {
+        $array = $this->array;
+        $array = array_merge($array, $this->add);
+    }
 }
